@@ -15,7 +15,7 @@ st.write("---")
   
   
 st.header("Enter Website URL")
-user_q = st.text_box("Enter your URL here")
+user_q = st.text_input("Enter your URL here")
 # #file uploader
 # uploaded_files = st.file_uploader("Upload documents",accept_multiple_files=True, type=["txt","pdf"])
 # st.write("---")
