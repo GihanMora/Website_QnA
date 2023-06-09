@@ -26,6 +26,7 @@ elif site:
   st.write(str(site) + " starting to crawl..")
   crawl(site, 'simp.jl', follow_links=True)
   crawl_df = pd.read_json('simp.jl', lines=True)
+  st.write(len(crawl_df))
   crawl_df = crawl_df[['body_text','header_links_text','og:title','h1', 'h2', 'h3', 'h4','h5','title']]
 
   st.write(crawl_df)
