@@ -15,7 +15,17 @@ st.write("---")
   
   
 st.header("Enter Website URL")
-user_q = st.text_input("Enter your URL here")
+site = st.text_input("Enter your URL here")
+
+crawl(site, 'simp.jl', follow_links=True)
+crawl_df = pd.read_json('simp.jl', lines=True)
+crawl_df = crawl_df[['body_text','header_links_text','og:title','h1', 'h2', 'h3', 'h4','h5','title']]
+
+st.write(crawl_df)
+
+
+
+
 # #file uploader
 # uploaded_files = st.file_uploader("Upload documents",accept_multiple_files=True, type=["txt","pdf"])
 # st.write("---")
