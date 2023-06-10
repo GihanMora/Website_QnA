@@ -37,6 +37,7 @@ elif site:
     
     #load df to langchain
     loader = DataFrameLoader(crawl_df, page_content_column="body_text")
+    docs = loader.load()
     
     #chunking
     char_text_splitter = CharacterTextSplitter(chunk_size=3000, chunk_overlap=10)
