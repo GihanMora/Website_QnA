@@ -41,7 +41,7 @@ elif site:
       docs = loader.load()
 
       #chunking
-      char_text_splitter = CharacterTextSplitter(chunk_size=3000, chunk_overlap=10)
+      char_text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=10)
       doc_texts = char_text_splitter.split_documents(docs)
 
 
