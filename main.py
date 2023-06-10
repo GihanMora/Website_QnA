@@ -61,7 +61,7 @@ elif site:
         if st.button("Get Response"):
           try:
             with st.spinner("Model is working on it..."):
-              result = model({"question":user_q}, return_only_outputs=True)
+              result = model({"query":user_q}, return_only_outputs=True)
               st.subheader('Your response:')
               st.write(result['answer'])
           except Exception as e:
