@@ -52,7 +52,7 @@ elif site:
       # Initialize VectorDBQA Chain from LangChain
       #deciding model
       model_name = "gpt-3.5-turbo"
-      llm = OpenAI(model_name=model_name, openai_api_key = st.secrets["openai_api_key"]
+      llm = OpenAI(model_name=model_name, openai_api_key = st.secrets["openai_api_key"])
       model = VectorDBQA.from_chain_type(llm=llm, streaming=True), chain_type="stuff", vectorstore=vStore)
 
       if crawl_df:
