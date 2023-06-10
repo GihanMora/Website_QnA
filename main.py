@@ -9,6 +9,9 @@ import streamlit as st
 from advertools import crawl
 import pandas as pd
 from langchain.document_loaders import DataFrameLoader
+from langchain.text_splitter import CharacterTextSplitter
+from langchain import OpenAI, VectorDBQA
+from langchain.embeddings.openai import OpenAIEmbeddings
 
 
   
@@ -36,7 +39,7 @@ elif site:
     loader = DataFrameLoader(crawl_df, page_content_column="body_text")
     
     #chunking
-    char_text_splitter = MarkdownTextSplitter(chunk_size=3000, chunk_overlap=10)
+    char_text_splitter = CharacterTextSplitter(chunk_size=3000, chunk_overlap=10)
     doc_texts = char_text_splitter.split_documents(docs)
     
     
