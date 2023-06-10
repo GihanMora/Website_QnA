@@ -68,6 +68,6 @@ elif site:
           except Exception as e:
             st.error(f"An error occurred: {e}")
             st.error('Oops, the GPT response resulted in an error :( Please try again with a different question.')
- except Exception as e:
+   except Exception as e:
             st.error(f"An error occurred: {e}")
             st.error('Oops, crawling resulted in an error :( Please try again with a different URL.')
