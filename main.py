@@ -56,7 +56,6 @@ elif site:
       model = VectorDBQA.from_chain_type(llm=llm, chain_type="stuff", vectorstore=vStore)
 
       if len(crawl_df):
-        st.write(str(len(uploaded_files)) + " document(s) loaded..")
         st.header("Ask your data")
         user_q = st.text_area("Enter your questions here")
         if st.button("Get Response"):
