@@ -38,6 +38,8 @@ elif site:
 #   st.write(str(site) + " starting to crawl..")
   try:
     with st.spinner(str(site) + " starting to crawl.."):
+      if os.path.exists("demofile.txt"):
+        os.remove("simp.jl")
       crawl(site, 'simp.jl', follow_links=False)
       crawl_df = pd.read_json('simp.jl', lines=True)
       st.write(len(crawl_df))
