@@ -29,12 +29,12 @@ st.set_page_config(layout="centered", page_title="Website QnA")
 
 
 st.header("Website QnA Bot 🤖")
-
+state = st.session_state
 site = st.text_input("Enter your URL here")
 if st.button('Say hello'):
   if site is None:
     st.info(f"""Enter Website to Build QnA Bot""")
-  elif site  and ("crawling" not in session):
+  elif site  and ("crawling" not in state):
     st.write(str(site) + " starting to crawl..")
     try:
 
