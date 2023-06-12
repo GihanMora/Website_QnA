@@ -76,6 +76,7 @@ elif site  and ("crawling" not in state):
      
 if site and ("crawling" in state):
       st.header("Ask your data")
+      model = st.session_state['model']
       user_q = st.text_input("Enter your questions here")
       if st.button("Get Response"):
         try:
