@@ -11,7 +11,7 @@ from langchain.vectorstores import Chroma
 from advertools import crawl
 import pandas as pd
 from langchain.document_loaders import DataFrameLoader
-from langchain.text_splitter import CharacterTextSplitter
+from langchain.text_splitter import CharacterTextSplitter,RecursiveCharacterTextSplitter
 from langchain import OpenAI, VectorDBQA
 from langchain.embeddings.openai import OpenAIEmbeddings
 
@@ -53,8 +53,10 @@ elif site  and ("crawling" not in state):
     docs = loader.load()
 
     #chunking
-    char_text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=10)
-    doc_texts = char_text_splitter.split_documents(docs)
+    text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=1000, chunk_overlap=0, separators=[" ", ",", "\n"]
+    )
+    doc_texts = text_splitter.split_documents(docs)
 
 
     #extract embeddings and build QnA Model
