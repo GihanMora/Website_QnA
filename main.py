@@ -13,7 +13,7 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain import OpenAI, VectorDBQA
 from langchain.embeddings.openai import OpenAIEmbeddings
 
-
+image = Image.open('GeekAvenue_logo.png')
   
 st.set_page_config(layout="centered", page_title="Website QnA")
 st.header("Website QnA Bot 🤖")
