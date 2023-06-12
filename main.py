@@ -83,10 +83,10 @@ if site and ("crawling" in state):
       if st.button("Get Response"):
         try:
           with st.spinner("Model is working on it..."):
-            st.write(model)
+#             st.write(model)
             result = model({"query":user_q}, return_only_outputs=True)
             st.subheader('Your response:')
-            st.write(result)
+            st.write(result["result"])
         except Exception as e:
           st.error(f"An error occurred: {e}")
           st.error('Oops, the GPT response resulted in an error :( Please try again with a different question.')
