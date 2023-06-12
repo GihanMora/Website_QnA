@@ -17,7 +17,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 
 st.set_page_config(layout="centered", page_title="Website QnA")
 image = Image.open('GeekAvenue_logo.png')
-st.image(image, width=64) 
+st.image(image, width=128) 
 st.header("Website QnA Bot 🤖")
 st.write("---")
 site = st.text_input("Enter your URL here")
