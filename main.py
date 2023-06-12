@@ -68,6 +68,7 @@ elif site  and ("crawling" not in state):
     model = VectorDBQA.from_chain_type(llm=llm, chain_type="stuff", vectorstore=vStore)
     my_bar.progress(100, text="Model is ready.")
     st.session_state['crawling'] = True
+    st.session_state['model'] = model 
     
   except Exception as e:
             st.error(f"An error occurred: {e}")
