@@ -67,7 +67,7 @@ elif site  and ("crawling" not in state):
     llm = OpenAI(model_name=model_name, openai_api_key = st.secrets["openai_api_key"])
     model = VectorDBQA.from_chain_type(llm=llm, chain_type="stuff", vectorstore=vStore)
     my_bar.progress(100, text="Model is ready.")
-    crawling = True
+    st.session_state['crawling'] = True
     if len(crawl_df):
       st.header("Ask your data")
       user_q = st.text_input("Enter your questions here")
