@@ -34,7 +34,7 @@ site = st.text_input("Enter your URL here")
 crawling = False
 if site is None:
   st.info(f"""Enter Website to Build QnA Bot""")
-elif site and (!crawling):
+elif site and (not crawling):
   st.write(str(site) + " starting to crawl..")
   try:
 
