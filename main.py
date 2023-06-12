@@ -32,9 +32,11 @@ st.header("Website QnA Bot 🤖")
 state = st.session_state
 site = st.text_input("Enter your URL here")
 if st.button("Build Model"):
+  
+ 
   if site is None:
     st.info(f"""Enter Website to Build QnA Bot""")
-  elif site  and ("crawling" not in state) and (site != state["site"]):
+  elif site:
    
     st.write(str(site) + " starting to crawl..")
     try:
