@@ -18,9 +18,6 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 st.set_page_config(layout="centered", page_title="Website QnA")
 st.header("Website QnA")
 st.write("---")
-  
-  
-st.header("Enter Website URL")
 site = st.text_input("Enter your URL here")
 
 
