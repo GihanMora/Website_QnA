@@ -66,18 +66,18 @@ elif site:
       llm = OpenAI(model_name=model_name, openai_api_key = st.secrets["openai_api_key"])
       model = VectorDBQA.from_chain_type(llm=llm, chain_type="stuff", vectorstore=vStore)
 
-      if len(crawl_df):
-        st.header("Ask your data")
-        user_q = st.text_area("Enter your questions here")
-        if st.button("Get Response"):
-          try:
-            with st.spinner("Model is working on it..."):
-              result = model({"query":user_q}, return_only_outputs=True)
-              st.subheader('Your response:')
-              st.write(result['answer'])
-          except Exception as e:
-            st.error(f"An error occurred: {e}")
-            st.error('Oops, the GPT response resulted in an error :( Please try again with a different question.')
+    if len(crawl_df):
+      st.header("Ask your data")
+      user_q = st.text_area("Enter your questions here")
+      if st.button("Get Response"):
+        try:
+          with st.spinner("Model is working on it..."):
+            result = model({"query":user_q}, return_only_outputs=True)
+            st.subheader('Your response:')
+            st.write(result['answer'])
+        except Exception as e:
+          st.error(f"An error occurred: {e}")
+          st.error('Oops, the GPT response resulted in an error :( Please try again with a different question.')
   except Exception as e:
             st.error(f"An error occurred: {e}")
             st.error('Oops, crawling resulted in an error :( Please try again with a different URL.')
