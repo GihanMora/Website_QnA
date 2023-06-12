@@ -24,7 +24,7 @@ with col1:
     st.image(image, width=80)
 with col2:
     st.header('Geek Avenue')
-st.write(":heavy_minus_sign:" * 25) # horizontal separator line.
+st.write("---") # horizontal separator line.
 
 
 st.header("Website QnA Bot 🤖")
