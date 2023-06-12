@@ -73,7 +73,7 @@ elif site:
     my_bar.progress(100, text="Model is ready.")
     if len(crawl_df):
       st.header("Ask your data")
-      user_q = st.text_area("Enter your questions here")
+      user_q = st.text_input("Enter your questions here")
       if st.button("Get Response"):
         try:
           with st.spinner("Model is working on it..."):
