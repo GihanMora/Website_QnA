@@ -31,9 +31,9 @@ st.set_page_config(layout="centered", page_title="Website QnA")
 st.header("Website QnA Bot 🤖")
 
 
-form = st.form(key='my-form')
+# form = st.form(key='my-form')
 site = st.text_input("Enter your URL here")
-submit = form.form_submit_button('Submit')
+# submit = form.form_submit_button('Submit')
 
 
 if site is None:
