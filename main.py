@@ -24,11 +24,11 @@ with col1:
     st.image(image, width=80)
 with col2:
     st.header('    Geek Avenue')
-
+st.write("---")
 
 
 st.header("Website QnA Bot 🤖")
-st.write("---")
+
 site = st.text_input("Enter your URL here")
 
 
