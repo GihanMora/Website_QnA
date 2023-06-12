@@ -34,7 +34,7 @@ site = st.text_input("Enter your URL here")
 if st.button('Say hello'):
   if site is None:
     st.info(f"""Enter Website to Build QnA Bot""")
-  elif site and (not crawling):
+  elif site:
     st.write(str(site) + " starting to crawl..")
     try:
 
