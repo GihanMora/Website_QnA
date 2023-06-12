@@ -19,7 +19,7 @@ st.set_page_config(layout="centered", page_title="Website QnA")
 image = Image.open('GeekAvenue_logo.png')
  
 
-col1, mid, col2 = st.columns([1,5,20])
+col1, mid, col2 = st.columns([1,2,20])
 with col1:
     st.image(image, width=80)
 with col2:
