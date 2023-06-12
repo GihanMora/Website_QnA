@@ -34,7 +34,8 @@ site = st.text_input("Enter your URL here")
 if st.button("Build Model"):
   if site is None:
     st.info(f"""Enter Website to Build QnA Bot""")
-  elif site  and ("crawling" not in state):
+  elif site  and ("crawling" not in state) and (site != state["site"]):
+   
     st.write(str(site) + " starting to crawl..")
     try:
 
@@ -70,7 +71,8 @@ if st.button("Build Model"):
       model = VectorDBQA.from_chain_type(llm=llm, chain_type="stuff", vectorstore=vStore)
       my_bar.progress(100, text="Model is ready.")
       st.session_state['crawling'] = True
-      st.session_state['model'] = model 
+      st.session_state['model'] = model
+      st.session_state['site'] = site
 
     except Exception as e:
               st.error(f"An error occurred: {e}")
