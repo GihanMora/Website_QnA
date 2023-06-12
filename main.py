@@ -65,7 +65,7 @@ elif site  and ("crawling" not in state):
     #deciding model
     model_name = "gpt-3.5-turbo"
     llm = OpenAI(model_name=model_name, openai_api_key = st.secrets["openai_api_key"])
-    model = VectorDBQA.from_chain_type(llm=llm, chain_type="stuff", vectorstore=vStore)
+    model = VectorDBQA.from_chain_type(llm=llm, chain_type="stuff", vectorstore=vStore, reduce_k_below_max_tokens=True)
     my_bar.progress(100, text="Model is ready.")
     st.session_state['crawling'] = True
     st.session_state['model'] = model 
