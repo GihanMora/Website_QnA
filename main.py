@@ -73,7 +73,7 @@ elif site  and ("crawling" not in state):
             st.error(f"An error occurred: {e}")
             st.error('Oops, crawling resulted in an error :( Please try again with a different URL.')
      
-if len(crawl_df) and ("crawling" in state):
+if site and ("crawling" in state):
       st.header("Ask your data")
       user_q = st.text_input("Enter your questions here")
       if st.button("Get Response"):
