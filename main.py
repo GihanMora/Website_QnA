@@ -68,7 +68,12 @@ elif site  and ("crawling" not in state):
     model = VectorDBQA.from_chain_type(llm=llm, chain_type="stuff", vectorstore=vStore)
     my_bar.progress(100, text="Model is ready.")
     st.session_state['crawling'] = True
-    if len(crawl_df):
+    
+  except Exception as e:
+            st.error(f"An error occurred: {e}")
+            st.error('Oops, crawling resulted in an error :( Please try again with a different URL.')
+     
+if len(crawl_df) and ("crawling" in state):
       st.header("Ask your data")
       user_q = st.text_input("Enter your questions here")
       if st.button("Get Response"):
@@ -80,6 +85,3 @@ elif site  and ("crawling" not in state):
         except Exception as e:
           st.error(f"An error occurred: {e}")
           st.error('Oops, the GPT response resulted in an error :( Please try again with a different question.')
-  except Exception as e:
-            st.error(f"An error occurred: {e}")
-            st.error('Oops, crawling resulted in an error :( Please try again with a different URL.')
