@@ -23,7 +23,7 @@ col1, mid, col2 = st.columns([1,1,20])
 with col1:
     st.image(image, width=80)
 with col2:
-    st.header('Geek Avenue')
+    st.header('    Geek Avenue')
 
 
 
