@@ -30,9 +30,11 @@ st.set_page_config(layout="centered", page_title="Website QnA")
 
 st.header("Website QnA Bot 🤖")
 
-
+if 'site' not in st.session_state:
+ site = st.text_input("Enter your URL here")
+	st.session_state.site = site
 # form = st.form(key='my-form')
-site = st.text_input("Enter your URL here")
+
 # submit = form.form_submit_button('Submit')
 
 
