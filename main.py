@@ -28,7 +28,7 @@ st.set_page_config(layout="centered", page_title="Website QnA")
 # st.write("---") # horizontal separator line.
 
 
-st.header("Website QnA Bot 🤖")
+st.header("Website QnA")
 state = st.session_state
 site = st.text_input("Enter your URL here")
 if st.button("Build Model"):
