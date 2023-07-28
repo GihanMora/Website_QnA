@@ -44,8 +44,9 @@ if st.button("Build Model"):
       my_bar = st.progress(0, text="Crawling in progress. Please wait.")
       if os.path.exists("simp.jl"):
         os.remove("simp.jl")
-      st.write(str(site) + " starting to crawl..")
+      
       crawl(site, 'simp.jl', follow_links=False)
+      st.write(str(site) + " starting to crawl..")
       crawl_df = pd.read_json('simp.jl', lines=True)
       st.write(len(crawl_df))
       crawl_df = crawl_df[['body_text']]
