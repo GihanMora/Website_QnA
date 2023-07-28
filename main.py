@@ -8,7 +8,7 @@ from langchain.vectorstores import Chroma
 # from langchain import OpenAI, VectorDBQA
 # from langchain.chains import RetrievalQAWithSourcesChain
 # import PyPDF2
-from advertools import crawl
+import advertools as adv
 import pandas as pd
 from langchain.document_loaders import DataFrameLoader
 from langchain.text_splitter import CharacterTextSplitter,RecursiveCharacterTextSplitter
@@ -45,7 +45,7 @@ if st.button("Build Model"):
       if os.path.exists("simp.jl"):
         os.remove("simp.jl")
       
-      crawl(site, 'simp.jl', follow_links=False)
+      adv.crawl(site, 'simp.jl', follow_links=False)
       st.write(str(site) + " starting to crawl..")
       crawl_df = pd.read_json('simp.jl', lines=True)
       st.write(len(crawl_df))
